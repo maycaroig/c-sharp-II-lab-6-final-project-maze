@@ -1,0 +1,33 @@
+﻿<Window x:Class="MazeProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Maze Maker and Solver" Height="660" Width="640" MinHeight="480" MinWidth="640" 
+        Icon="/MazeProject;component/Maze.ico">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<StackPanel Name="commandsPanel" Grid.Row="0" Orientation="Horizontal" Margin="3" >
+			<TextBlock Text="Width (5-50)" VerticalAlignment="Center" Margin="2,0,2,0" />
+			<TextBox Name="widthTextBox" Text="10" VerticalAlignment="Center" Width="40" Margin="2,0,2,0" />
+			<TextBlock Text="Height (5-50)" VerticalAlignment="Center" Margin="6,0,2,0" />
+			<TextBox Name="heightTextBox" Text="10" VerticalAlignment="Center" Width="40" Margin="2,0,2,0" />
+			<TextBlock Text="Complexity (0-100)" VerticalAlignment="Center" Margin="6,0,2,0" />
+			<TextBox Name="complexityTextBox" Text="50" VerticalAlignment="Center" Width="40" Margin="2,0,2,0" />
+			<Button Name="generateButton" Content="Generate" Margin="6,0,2,0" Click="generateButton_Click" />
+            <Button Name="solveButton" Content="  Solve  " Margin="6,0,2,0" Click="solveButton_Click" />
+		</StackPanel>
+
+		<UniformGrid Grid.Row="1" Name="mazeGrid" Margin="2">
+			<UniformGrid.Background>
+				<LinearGradientBrush EndPoint="0.55,1" StartPoint="0.45,0">
+					<GradientStop Color="White" />
+					<GradientStop Color="AliceBlue" Offset="1"/>
+				</LinearGradientBrush>
+			</UniformGrid.Background>
+		</UniformGrid>
+	</Grid>
+
+</Window>
